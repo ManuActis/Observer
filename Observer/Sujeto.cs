@@ -27,22 +27,24 @@ namespace Observer
 
         public void Notificar()
         {
-            foreach (IObservador obs in observadores) {
+            foreach (IObservador obs in observadores)
+            {
                 obs.Actualizar(mensaje);
-            } 
+            }
         }
 
         public void Accion()
         {
-            // acá va la acción propia del negocio
+            //se generan números simulando llamadas a clientes
 
             num = rnd.Next(10);
 
-            if(num%2==0)
+            if (num % 2 == 0)
             {
                 Console.WriteLine("Nuevo valor");
                 mensaje = String.Format("El nuevo valor es {0}", num);
                 Notificar();
             }
         }
+    }
 }
